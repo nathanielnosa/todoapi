@@ -11,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!xe-=x$kfp1o-%w-8t=v8ige+!#v-*bcec)=5k7v9+uk=a9n4*'
+SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure-!xe-=x$kfp1o-%w-8t=v8ige+!#v-*bcec)=5k7v9+uk=a9n4*')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ("DEBUG","True")=="True"
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost:8000',"https://todoapi-79a5.onrender.com","todoapi-79a5.onrender.com"]
 
